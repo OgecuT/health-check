@@ -3,7 +3,7 @@ version: '3.4'
 services:
   healthcheck:
     container_name: healthcheck
-    image: healthcheck
+    image: ghcr.io/ogecut/health-check:latest
     build:
       context: .
       dockerfile: ./Dockerfile

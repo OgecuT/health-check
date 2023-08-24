@@ -1,4 +1,4 @@
-FROM node:18.16-alpine AS builder
+FROM node:20.5.1-alpine AS builder
 
 LABEL maintainer="Oleksandr Zaplitnyi <devogecut@gmail.com>"
 
@@ -21,7 +21,7 @@ COPY . .
 
 RUN node-prune ./node_modules
 
-FROM node:18.16-alpine as final
+FROM node:20.5.1-alpine as final
 
 RUN mkdir -p /app && chown -R node:node /app
 RUN mkdir -p /app/logs && chown -R node:node /app/logs
