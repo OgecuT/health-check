@@ -1,0 +1,17 @@
+.idea
+.git
+.dist
+node_modules
+logs
+
+.DS_Store
+
+# dotenv environment variable files
+.env.example
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+docker-compose.yml
+docker-compose.yml.example

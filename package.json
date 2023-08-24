@@ -1,0 +1,38 @@
+{
+    "name": "health-check",
+    "version": "1.0.0",
+    "author": "Oleksandr Zaplitnyi <devogecut@gmail.com>",
+    "description": "Monitors and alerts for docker containers state changes",
+    "keywords": [
+        "docker",
+        "docker healthcheck",
+        "healthcheck",
+        "telegram healthcheck notification",
+        "telegram healthcheck alert"
+    ],
+    "license": "MIT",
+    "type": "module",
+    "main": "./index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node --watch index.js"
+    },
+    "dependencies": {
+        "@types/dockerode": "^3.3.19",
+        "dockerode": "^3.3.5",
+        "dotenv": "^16.3.1",
+        "node-telegram-bot-api": "^0.61.0"
+    },
+    "devDependencies": {
+        "@types/node-telegram-bot-api": "^0.61.7",
+        "prettier": "^3.0.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ogecut/health-check.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ogecut/health-check/issues"
+    },
+    "homepage": "https://github.com/ogecut/health-check"
+}
