@@ -45,6 +45,27 @@ services:
 
 - For Telegram: See documentation for how to obtain ID values
 
+#### LABEL_ENABLE
+
+This is an optional value, and defaults to false if it is not specified. This feature allows you to specify (with labels) 'either'
+specific containers to monitor or exclude from monitoring.
+
+- If it is set to false, then all containers will be monitored `except` for ones with the following label in their YAML.
+
+```ya
+    labels:
+      healthcheck.enable: 'false'
+```
+
+- If it is set to true, `only` containers with the following label will be monitored
+
+```ya
+    labels:
+      healthcheck.enable: 'true'
+```
+
+- If you just want to monitor everything, then set `LABEL_ENABLE: 'false'` or just leave it out altogether.
+
 ## License
 
 **The MIT License (MIT)**
