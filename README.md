@@ -1,12 +1,22 @@
-version: '3.4'
+# Healthcheck Monitor
+
+## Features
+
+- Telegram integration
+
+## Future Considerations
+
+- Additional messaging platform support
+
+## Installation
+
+```ya
+version: '2.4'
 
 services:
   healthcheck:
     container_name: healthcheck
     image: ogecut/health-check:latest
-    build:
-      context: .
-      dockerfile: ./Dockerfile
     environment:
       # [Required] - The name of the container to monitor and the label app marker
       CONTAINER_NAME: 'healthcheck'
@@ -31,3 +41,14 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
+```
+
+- For Telegram: See documentation for how to obtain ID values
+- For Pushbullet: Open Pushbullet in a browser and get device ID from
+  URL [Example](https://raw.githubusercontent.com/petersem/monocker/master/doco/pbdeviceid.PNG)
+- For Pushover: See pushover doco for user key and app token
+- For Discord: See Discord doco for how to create a webhook and get the url
+
+## License
+
+**The MIT License (MIT)**
