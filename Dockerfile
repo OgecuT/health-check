@@ -6,8 +6,7 @@ ENV NODE_ENV="production"
 
 RUN apk update && apk add git curl bash && rm -rf /var/cache/apk/*
 
-# install node-prune (https://github.com/tj/node-prune)
-RUN curl -sf https://gobinaries.com/tj/node-prune | sh
+#RUN curl -sf https://gobinaries.com/tj/node-prune | sh
 
 RUN mkdir -p /app
 
@@ -19,12 +18,11 @@ RUN npm ci --no-audit --production --silent
 
 COPY . .
 
-RUN node-prune ./node_modules
+#RUN node-prune ./node_modules
 
 FROM node:20.5.1-alpine as final
 
 RUN mkdir -p /app && chown -R node:node /app
-RUN mkdir -p /app/logs && chown -R node:node /app/logs
 
 USER node:node
 
