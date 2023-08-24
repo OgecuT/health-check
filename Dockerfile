@@ -19,7 +19,6 @@ RUN npm ci --no-audit --production --silent
 
 COPY . .
 
-RUN npm run build
 RUN node-prune ./node_modules
 
 FROM node:18.16-alpine as final
@@ -34,6 +33,7 @@ WORKDIR /app
 # copy from build image
 COPY --from=builder --chown=node:node /app/node_modules ./node_modules
 COPY --from=builder --chown=node:node /app/src ./src
+COPY --from=builder --chown=node:node /app/index.js ./
 COPY --from=builder --chown=node:node /app/package.json ./
 
 CMD ["node", "index.js"]

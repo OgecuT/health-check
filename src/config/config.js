@@ -32,7 +32,7 @@ export const createConfig = () => {
 
         telegram: {
             botToken: process.env.TELEGRAM_BOT_TOKEN,
-            chatIds: process.env.TELEGRAM_CHAT_IDS.split(','),
+            chatIds: process.env.TELEGRAM_CHAT_IDS ? process.env.TELEGRAM_CHAT_IDS.split(',') : [],
         },
     });
 };
@@ -42,10 +42,10 @@ export const createConfig = () => {
  */
 export const validateConfig = (config) => {
     if (!config.containerName) {
-        throw new Error('CONTAINER_NAME is not defined');
+        throw new Error('CONTAINER_NAME is not defined. Please set env variable.');
     }
 
     if (!config.serverLabel) {
-        throw new Error('SERVER_LABEL is not defined');
+        throw new Error('SERVER_LABEL is not defined. Please set env variable.');
     }
 };
