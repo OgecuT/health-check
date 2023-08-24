@@ -1,5 +1,7 @@
 # Healthcheck Monitor
 
+Health check offers a simple tool for monitoring Docker containers.
+
 ## Features
 
 - Telegram integration
