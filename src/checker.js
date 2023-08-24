@@ -101,7 +101,9 @@ export class Checker {
         this.#containersState = newContainersState;
 
         if (this.#isFirstRun === true) {
-            await this.#sender.send(firstRunMessages.join('\n'));
+            if (firstRunMessages.length > 0) {
+                await this.#sender.send(firstRunMessages.join('\n'));
+            }
 
             this.#isFirstRun = false;
         }
