@@ -11,8 +11,6 @@
 ## Installation
 
 ```ya
-version: '2.4'
-
 services:
   healthcheck:
     container_name: healthcheck
