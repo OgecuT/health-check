@@ -11,7 +11,7 @@ export class Sender {
 
         this.#notifiers.push(new Log(config));
 
-        if (config.telegram.botToken && Array.isArray(config.telegram.chatId) && config.telegram.chatId.length > 0) {
+        if (config.telegram.botToken && Array.isArray(config.telegram.chatIds) && config.telegram.chatIds.length > 0) {
             this.#notifiers.push(new Telegram(config));
         }
     }
