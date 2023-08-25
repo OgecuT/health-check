@@ -9,7 +9,11 @@ export class Sender {
     constructor(config) {
         this.#config = config;
 
-        this.#notifiers.push(new Log(config), new Telegram(config));
+        this.#notifiers.push(new Log(config));
+
+        if (config.telegram.botToken && Array.isArray(config.telegram.chatId) && config.telegram.chatId.length > 0) {
+            this.#notifiers.push(new Telegram(config));
+        }
     }
 
     async send(message) {
